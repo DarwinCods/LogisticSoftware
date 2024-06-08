@@ -1,0 +1,202 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+}
+
+form input, form textarea, form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.product-info {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-info h2 {
+    color: #333;
+}
+
+.product-info table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.product-info td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-info td:first-child {
+    font-weight: bold;
+    width: 30%;
+}
+
+.product-info td:last-child {
+    text-align: left;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+form {
+    margin-bottom: 20px;
+    text-align: center;
+}
+label {
+    font-weight: bold;
+}
+select {
+    padding: 5px;
+    font-size: 16px;
+    width: 200px;
+}
+input[type="submit"] {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+.categoria-info, .productos-lista {
+    margin-top: 20px;
+}
+
+/* Estilos para la tabla de productos */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+tr:hover {
+    background-color: #ddd;
+}
+/* estilos de a */
+.nav-container {
+    text-align: center;
+}
+
+.nav-container ul {
+    display: inline-block; /* Alinea la lista horizontalmente */
+    padding: 0;
+}
+
+.nav-container li {
+    display: inline; /* Alinea los elementos de la lista horizontalmente */
+}
+
+a {
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+    text-decoration: none;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+
+a:hover {
+    background-color: #0056b3;
+}
+
+h3 {
+    text-align: center;
+    font-size: 24px; /* Tamaño de la fuente */
+}
+
+
+
+body {
+    text-align: center; /* Centra todo el contenido del body */
+}
+
+table {
+    margin: 0 auto; /* Centra la tabla */
+}
+
+.link-container {
+    text-align: center; /* Centra el contenido del contenedor de enlaces */
+    margin-top: 20px;
+}
+
+.link-container a {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    background-color: #ffb300;
+    color: black;
+    /* width: auto; Ajusta el ancho para cuadrar 
+    height: 100px; Ajusta la altura para cuadrar */
+    line-height: 30px; /* Ajusta la altura de línea para centrar el texto verticalmente */
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Proveedor</title>
+    <link rel="icon" href="{{ url_for('static', filename='imagenes/proveedor.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Agregar Proveedor</h1>
+    <form method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" required><br>
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono" required><br>
+        <button type="submit">Agregar</button>
+    </form>
+    <div class="link-container">
+        <a href="{{ url_for('index')}}">Volver a Inicio</a>
+    </div>
+</body>
+</html>
