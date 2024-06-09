@@ -9,7 +9,7 @@ def get_db():
         db = g._database = sqlite3.connect(DATABASE)
     return db
 
-def query_db(query, args=(), one=False):
+def query_db(query, args=(), one = False):
     cur = get_db().execute(query, args)
     rv = cur.fetchall()
     cur.close()

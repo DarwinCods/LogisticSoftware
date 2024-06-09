@@ -8,7 +8,7 @@ function showAlert(category, message) {
         alertType = 'info';
     } else if (category === 'warning') {
         alertType = 'warning';
-    } else if (category === 'danger') {
+    } else if (category==='danger') {
         alertType = 'danger';
     }
     alert(message);

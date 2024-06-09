@@ -290,7 +290,7 @@ def agregar_stock(nombre_productos_cantidades):
                     db.execute("UPDATE productos SET stock = stock + ? WHERE nombre = ? AND bodega_nombre = ?", (espacio_disponible, nombre_producto, bodega_nombre))
                     db.commit()
                     espacio_necesario -= espacio_disponible
-                    unidades_agregadas = True
+                    unidades_agregadas =  True
 
             if espacio_necesario > 0:  # Producto no pudo ser agregado completamente
                 flash(f'No hay suficiente espacio en las bodegas para {cantidad - espacio_necesario} unidades de {nombre_producto}. capacidad maxima es ({capacidad_maxima}) y la bodega es {bodega_nombre}', 'danger')
