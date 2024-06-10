@@ -4,7 +4,8 @@
 - Gerson Sanchez
 - Darwin Olarte
 - Ferney Castaño
-Instruccioens:
+
+1. Instrucciones:
 
 # Instrucciones para Ejecutar el Proyecto
 
