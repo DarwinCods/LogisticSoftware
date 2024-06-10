@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Producto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='imagenes/producto.png') }}" type="image/x-icon">
+</head>
+<body>
+    <h1>Agregar Producto</h1>
+    <form method="post">
+        <div>
+            <label for="nombre">Nombre del Producto:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div>
+            <label for="descripcion">Descripción:</label>
+            <input type="text" id="descripcion" name="descripcion" required>
+        </div>
+        <div>
+            <label for="precio">Precio:</label>
+            <input type="number" step="0.01" id="precio" name="precio" required>
+        </div>
+        <div>
+            <label for="stock">Stock:</label>
+            <input type="number" id="stock" name="stock" required>
+        </div>
+        <div>
+            <label for="categoria_nombre">Categoría:</label>
+            <select id="categoria_nombre" name="categoria_nombre" required>
+                <option value="" selected disabled hidden>-- Selecciona una categoria --</option>    
+                {% for categoria_tuple in categorias %}
+                    {% set categoria = categoria_tuple[0] %}
+                    <option value="{{ categoria }}">{{ categoria }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <div>
+            <label for="proveedor_nombre">Proveedor:</label>
+            <select id="proveedor_nombre" name="proveedor_nombre" required>
+            <option value="" selected disabled hidden>-- Selecciona un proveedor --</option>    
+                {% for proveedor_tuple in proveedores %}
+                    {% set proveedor = proveedor_tuple[0] %}
+                    <option value="{{ proveedor }}">{{ proveedor }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label for="bodega_nombre">Bodega:</label>
+            <select id="bodega_nombre" name="bodega_nombre" required>
+                <option value="" selected disabled hidden>-- Selecciona una bodega --</option>
+                {% for bodega_tuple in bodegas %}
+                    {% set bodega = bodega_tuple[0] %}
+                    <option value="{{ bodega }}">{{ bodega }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" name="action" value="agregar_producto">Agregar</button>
+    </form>
+    <div class="link-container">
+        <a href="{{ url_for('index')}}">Volver a Inicio</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Consultar Categoría</title>
+    <link rel="icon" href="{{ url_for('static', filename='imagenes/proveedor.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Consultar Proveedor</h1>
+    <form action="" method="post">
+        <label for="proveedor_nombre">Proveedor:</label>
+        <select id="proveedor_nombre" name="proveedor_nombre" required>
+            <option value="" selected disabled hidden>-- Selecciona una proveedor --</option>    
+            {% for proveedor_tuple in proveedores %}
+                {% set proveedor = proveedor_tuple[0] %}
+                <option value="{{ proveedor }}">{{ proveedor }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Consultar">
+    </form>
+    {% if proveedor_info %}
+    <div class="proveedor-info">
+        <h2>Información de la Proveedor</h2>
+        <p><strong>Nombre:</strong> {{ proveedor_info.nombre }}</p>
+        <p><strong>Direccion:</strong> {{ proveedor_info.direccion }}</p>
+        <p><strong>Telefono:</strong> {{ proveedor_info.telefono }}</p>
+    </div>
+    <div class="productos-lista">
+        <h2>Productos en esta Proveedor</h2>
+        {% if proveedor_info.productos %}
+            <table>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Stock Actual</th>
+                </tr>
+                {% for producto in proveedor_info.productos %}
+                    <tr>
+                        <td>{{ producto.nombre }}</td>
+                        <td>{{ producto.descripcion }}</td>
+                        <td>{{ producto.precio }}</td>
+                        <td>{{ producto.stock }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No hay productos en esta proveedor.</p>
+        {% endif %}
+    </div>
+    {% endif %}
+    <div class="link-container">
+        <a href="{{ url_for('index')}}">Volver a Inicio</a>
+    </div>
+</body>
+</html>

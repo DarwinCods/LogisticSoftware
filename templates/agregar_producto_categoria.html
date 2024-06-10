@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='imagenes/image.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/alerts.js') }}"></script>
+    <title>Agregar Producto a Categoría</title>
+</head>
+<body>
+    <h1>Agregar Producto a Categoría</h1>
+    <form method="post">
+        <label for="nombre_producto">Nombre del Producto:</label>
+        <select name="nombre_producto" id="nombre_producto" required>
+            <option value="" selected disabled hidden>-- Selecciona una producto --</option>
+            {% for producto_tuple in productos %}
+                {% set producto = producto_tuple[0] %}
+                <option value="{{ producto }}">{{ producto }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="categoria_nombre">Nombre de la Categoría:</label>
+        <select name="categoria_nombre" id="categoria_nombre" required>
+            <option value="" selected disabled hidden>-- Selecciona una categoria --</option>
+            {% for categoria_tuple in categorias %}
+                {% set categoria = categoria_tuple[0] %}
+                <option value="{{ categoria }}">{{ categoria }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <button type="submit">Actualizar</button>
+    </form>
+    <div class="link-container">
+        <a href="{{ url_for('index')}}">Volver a Inicio</a>
+        <a href="{{ url_for('actualizar_eliminar_consultar')}}">Atras</a>
+    </div>
+</body>
+</html>

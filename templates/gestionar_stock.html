@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestionar Stock</title>
+    <link rel="icon" href="{{ url_for('static', filename='imagenes/stock.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/alerts.js') }}"></script>
+</head>
+<body>
+    <h3>Gestionar Stock</h3>
+    <form method="post" onsubmit="return validateForm()">
+        <div>
+            <label for="nombre_producto">Producto:</label>
+            <select id="nombre_producto" name="nombre_producto" required>
+                <option value="" selected disabled hidden>-- Selecciona un producto --</option>
+                {% for producto_tuple in productos %}
+                    {% set producto = producto_tuple[0] %}
+                    <option value="{{ producto }}">{{ producto }}</option>
+                {% endfor %}
+            </select>            
+        </div>
+        <div>
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad" required>
+        </div>
+        <button type="submit" name="action" value="agregar_stock">Agregar Stock</button>
+        <button type="submit" name="action" value="retirar_stock">Retirar Stock</button>
+    </form>
+    <div class="link-container">
+        <a href="{{ url_for('index')}}">Volver a Inicio</a>
+    </div>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <script>
+                showAlert('{{ category }}', '{{ message }}');
+            </script>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+</body>
+</html>

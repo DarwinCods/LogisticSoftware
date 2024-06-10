@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Consultar Categoría</title>
+    <link rel="icon" href="{{ url_for('static', filename='imagenes/image.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Consultar Categoría</h1>
+    <form action="" method="post">
+        <label for="categoria_nombre">Categoría:</label>
+        <select id="categoria_nombre" name="categoria_nombre" required>
+            <option value="" selected disabled hidden>-- Selecciona una categoría --</option>    
+            {% for categoria_tuple in categorias %}
+                {% set categoria = categoria_tuple[0] %}
+                <option value="{{ categoria }}">{{ categoria }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Consultar">
+    </form>
+    {% if categoria_info %}
+    <div class="categoria-info">
+        <h2>Información de la Categoría</h2>
+        <p><strong>Nombre:</strong> {{ categoria_info.nombre }}</p>
+        <p><strong>Descripción:</strong> {{ categoria_info.descripcion }}</p>
+    </div>
+    <div class="productos-lista">
+        <h2>Productos en esta Categoría</h2>
+        {% if categoria_info.productos %}
+            <table>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Stock Actual</th>
+                </tr>
+                {% for producto in categoria_info.productos %}
+                    <tr>
+                        <td>{{ producto.nombre }}</td>
+                        <td>{{ producto.descripcion }}</td>
+                        <td>{{ producto.precio }}</td>
+                        <td>{{ producto.stock }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No hay productos en esta categoría.</p>
+        {% endif %}
+    </div>
+    {% endif %}
+    <div class="link-container">
+        <a href="{{ url_for('index')}}">Volver a Inicio</a>
+    </div>
+</body>
+</html>

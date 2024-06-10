@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='imagenes/proveedor.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/alerts.js') }}"></script>
+    <title>Eliminar Producto de Proveedor</title>
+</head>
+<body>
+    <h1>Eliminar Producto de Proveedor</h1>
+    <form method="post" action="{{ url_for('eliminar_producto_proveedor') }}">
+        <label for="nombre_producto">Nombre del Producto:</label>
+        <select name="nombre_producto" id="nombre_producto" required>
+            <option value="" selected disabled hidden>--- Seleccione un producto ---</option>
+            {% for producto_tuple in productos %}
+                {% set producto = producto_tuple[0] %}
+                <option value="{{ producto }}">{{ producto }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Eliminar</button>
+    </form>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <div class="link-container">
+        <a href="{{ url_for('index')}}">Volver a Inicio</a>
+        <a href="{{ url_for('actualizar_eliminar_consultar')}}">Atras</a>
+    </div>
+</body>
+</html>

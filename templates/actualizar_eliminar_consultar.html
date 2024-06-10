@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Gestión de Inventario</title>
+    <link rel="icon" href="{{ url_for('static', filename='imagenes/unilibre1.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/alerts.js') }}"></script>
+    </head>
+<body>
+    <h1>Mantenimiento de Productos</h1>
+    <div class="nav-container">
+        <ul>
+            <li><a href="{{ url_for('agregar_producto_categoria') }}">Actualizar Producto a Categoria</a></li>
+            <li><a href="{{ url_for('eliminar_producto_categoria') }}">Eliminar Producto a Categoria</a></li>
+            <li><a href="{{ url_for('agregar_producto_proveedor') }}">Actualizar Producto a Proveedor</a></li>
+            <li><a href="{{ url_for('eliminar_producto_proveedor') }}">Eliminar Producto a Proveedor</a></li>
+            <li><a href="{{ url_for('agregar_producto_bodega') }}">Actualizar Producto a Bodega</a></li>
+            <li><a href="{{ url_for('eliminar_producto_bodega') }}">Eliminar Producto a Bodega</a></li>
+            <li><a href="{{ url_for('retirar_producto_bodega') }}">Retirar Producto de Bodega</a></li>
+            <li><a href="{{ url_for('consultar_disponibilidad_producto') }}">Consultar Disponibilidad</a></li>
+        </ul>
+    </div>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <script>
+                    showAlert('{{ category }}', '{{ message }}');
+                </script>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <div class="link-container">
+        <a href="{{ url_for('index')}}">Volver a Inicio</a>
+    </div>
+</body>
+</html>
