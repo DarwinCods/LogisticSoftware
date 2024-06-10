@@ -43,7 +43,7 @@ pip install -r requirements.txt
 python app.py
 
 
-2. Abra un navegador web y vaya a `http://localhost:5000` para ver la aplicación en funcionamiento.
+2. Abra un navegador web y vaya a `http://localhost:5000` o `http://127.0.0.1:5000` para ver la aplicación en funcionamiento.
 
 ¡Listo! Ahora debería tener el proyecto ejecutándose localmente en su computadora.
 
