@@ -15,7 +15,7 @@ Este proyecto está desarrollado utilizando Flask, un framework web de Python. S
 1. Abra una terminal o línea de comandos en su computadora.
 2. Utilice el siguiente comando para clonar el repositorio:
 
-Reemplace `<URL_del_repositorio>` con la URL real del repositorio.
+Reemplace `https://github.com/DarwinCods/LogisticSoftware.git` con la URL real del repositorio.
 
 ## Configuración del Entorno
 
