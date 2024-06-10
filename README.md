@@ -22,8 +22,11 @@ Reemplace `https://github.com/DarwinCods/LogisticSoftware.git` con la URL real d
 1. Navegue al directorio del proyecto clonado.
 2. Cree un entorno virtual ejecutando el siguiente comando:
 
-python -m venv venv
-venv\Scripts\activate
+- python -m venv venv
+
+1. Para activar el entorno de virtual
+
+- venv\Scripts\activate
 
 ## Instalación de Dependencias
 
@@ -31,7 +34,6 @@ venv\Scripts\activate
 2. Instale las dependencias con el siguiente comando:
 
 pip install -r requirements.txt
-
 
 ## Ejecutar la Aplicación
 
