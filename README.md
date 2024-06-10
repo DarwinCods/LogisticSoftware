@@ -1,5 +1,5 @@
 # WEB SISTEMA DE INVENTARIO
-- Daniel
+- Daniel Quintero
 - Gerson Sanchez
 - Darwin Olarte
 - Ferney Castaño
